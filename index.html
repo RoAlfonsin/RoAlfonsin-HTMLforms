@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container rounded border border-black-subtle my-2">
+        <div class="row mb-2 rounded" id="r-title">
+            <div class="col bg-light p-2 rounded-top border border-black-subtle" id="c-title">
+                <p class="fs-3 fw-bold m-0 ps-3">Payment form example</p>
+            </div>
+        </div>
+        <form action="https://github.com/" method="post">
+            <div class="row my-2" id="r-alertmessage">
+                <div class="col rounded bg-danger-subtle mx-2 p-2" id="c-alertmessage">
+                    <p class="text-danger m-0 fw-semibold">Some fields are missing</p>
+                </div>
+            </div>
+            <div class="row my-2" id="r-card-cvc-amount">
+                <div class="col-5" id="c-card">
+                    <label for="cardNumber" class="form-label">Card #</label>
+                    <input type="text" pattern="[0-9]{16}" class="form-control" id="cardNumber" placeholder="XXXXXXXXXXXXXXXX" required>
+                    <div class="form-text">It should be 16 numbers.</div>  
+                </div>
+                <div class="col-3" id="c-cvc">
+                    <label for="cvcNumber" class="form-label">CVC #</label>
+                    <input type="password" class="form-control" id="cvcNumber" minlength="3" maxlength="4" placeholder="0000" required>
+                </div>
+                <div class="col-4" id="c-amount">
+                    <label for="amount" class="form-label">Amount</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control" id="amount" placeholder="Amount" min="1" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-2" id="r-fname-lname">
+                <div class="col" id="c-fname">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" required>
+                </div>
+                <div class="col" id="c-lname">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" required>
+                </div>
+            </div>
+            <div class="row my-2" id="r-city-state-pc">
+                <div class="col-6" id="c-city">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" required>
+                </div>
+                <div class="col" id="c-state">
+                    <label for="state" class="form-label">State</label>
+                    <select class="form-select" id="state" required>
+                        <option selected disabled value="">Pick a state</option>
+                        <option value="1">California</option>
+                        <option value="2">Texas</option>
+                        <option value="3">Alabama</option>
+                    </select>
+                </div>
+                <div class="col" id="c-pc">
+                    <label for="postalCode" class="form-label">Postal Code</label>
+                    <input type="number" class="form-control" max="99999" min="0" id="postalCode" required>
+                </div>
+            </div>
+            <div class="row my-2" id="r-cards-message">
+                <div class="col" id="c-cards">
+                    <label for="cardProvider" class="form-label">We accept:</label>
+                    <div class="row mx-1">
+                        <div class="col-auto p-2 mx-2 bg-secondary">
+                            <input class="form-check-input" type="radio" name="flexRadioCardProvider" id="flexRadioMaster" checked>
+                            <label class="form-check-label" for="flexRadioMaster">
+                              <img src="https://1000marcas.net/wp-content/uploads/2019/12/logo-Mastercard.png" style="height: 24px;">
+                            </label>
+                            <input class="form-check-input" type="radio" name="flexRadioCardProvider" id="flexRadioVisa">
+                            <label class="form-check-label" for="flexRadioVisa">
+                              <img src="https://1000marcas.net/wp-content/uploads/2019/12/VISA-Logo.png" style="height: 24px;">
+                            </label>
+                            <input class="form-check-input" type="radio" name="flexRadioCardProvider" id="flexRadioBankOfAmerica">
+                            <label class="form-check-label" for="flexRadioBankOfAmerica">
+                              <img src="https://1000marcas.net/wp-content/uploads/2020/07/logo-Bank-of-America.png" style="height: 24px;">
+                            </label>
+                            <input class="form-check-input" type="radio" name="flexRadioCardProvider" id="flexRadioMercadoLibe">
+                            <label class="form-check-label" for="flexRadioMercadoLibre">
+                              <img src="https://1000marcas.net/wp-content/uploads/2021/08/Mercado-Libre-Logo.png" style="height: 24px;">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="c-message">
+                    <label for="mesageTextarea" class="form-label">Message</label>
+                    <textarea class="form-control" id="mesageTextarea" rows="4"></textarea>
+                    <div class="form-text">Add any note here.</div>               
+                </div>
+            </div>
+            <div class="row mt-2" id="r.buttons">
+                <div class="col bg-light p-2 rounded-bottom border border-black-subtle d-flex justify-content-end" id="c-buttons">
+                    <button type="button" class="btn btn-secondary btn-sm mx-1">Cancel</button>
+                    <button type="submit" value="Send Form" class="btn btn-primary btn-sm mx-1">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+  </body>
+</html>
